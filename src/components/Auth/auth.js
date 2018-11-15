@@ -12,7 +12,6 @@ const loginButton = () => {
   `;
   $('#login-container').html(domString);
   $('#google-auth').on('click', () => {
-    // console.log('clicked');
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider);
   });
