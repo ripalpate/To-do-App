@@ -13,6 +13,12 @@ const navBarEvents = () => {
       }).catch((err) => {
         console.error('you are still logged in', err);
       });
+    } else if (e.target.id === 'navbar-button-tasks') {
+      $('#login-container').hide();
+      $('#tasks').show();
+    } else {
+      $('#login-container').show();
+      $('#tasks').hide();
     }
   });
 };
