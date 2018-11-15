@@ -1,9 +1,19 @@
 import $ from 'jquery';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import './navbar.scss';
 
 const navBarEvents = () => {
   $('.nav-link').on('click', (e) => {
-    console.log(e.target.id);
+    // console.log(e.target.id);
+    if (e.target.id === 'navbar-button-logout') {
+      firebase.auth().signOut().then(() => {
+        $('#login-container').show();
+        $('#tasks').hide();
+      }).catch((err) => {
+        console.error('you are still logged in', err);
+      });
+    }
   });
 };
 
@@ -18,6 +28,9 @@ const navbarBuilder = () => {
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" id="navbar-button-auth">Authentication</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" id="navbar-button-tasks">Tasks</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" id="navbar-button-logout">Logout</a>
