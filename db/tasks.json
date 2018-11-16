@@ -1,0 +1,34 @@
+{
+  "tasks" : [
+    {
+      "id": "task1",
+      "task": "Walk the dog",
+      "isCompleted": false
+    },
+    {
+      "id": "task2",
+      "task": "Attend meeting",
+      "isCompleted": true
+    },
+    {
+      "id": "task3",
+      "task": "Complete Volunteer work",
+      "isCompleted": true
+    },
+    {
+      "id": "task4",
+      "task": "Read a book",
+      "isCompleted": true
+    },
+    {
+      "id": "task5",
+      "task": "Go for groecery shopping",
+      "isCompleted": true
+    },
+    {
+      "id": "task6",
+      "task": "Complete homework",
+      "isCompleted": true
+    }
+]
+}
