@@ -7,12 +7,12 @@
     },
     {
       "id": "task2",
-      "task": "Attend Parent meeting",
-      "isCompleted": false
+      "task": "Attend meeting",
+      "isCompleted": true
     },
     {
       "id": "task3",
-      "task": "Attend Meeting",
+      "task": "Complete Volunteer work",
       "isCompleted": true
     },
     {
