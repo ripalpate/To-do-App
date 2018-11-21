@@ -3,6 +3,7 @@ import apiKeys from '../db/apiKeys.json';
 import navbarBuilder from './components/Navbar/navbar';
 import loginButton from './components/Auth/auth';
 import checkLoginStatus from './helpers/authHelpers';
+import tasksPage from './components/TasksPage/tasksPage';
 import 'bootstrap';
 import './index.scss';
 
@@ -12,5 +13,6 @@ const initializeApp = () => {
   navbarBuilder();
   loginButton();
   checkLoginStatus();
+  tasksPage();
 };
 initializeApp();
