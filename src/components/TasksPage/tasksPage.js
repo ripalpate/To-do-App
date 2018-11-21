@@ -4,13 +4,13 @@ import tasksData from '../../data/tasksData';
 
 const printAllTasks = (tasksArray) => {
   let domString = '';
+  domString += '<h5 class="task-heading">Tasks </h5>';
   tasksArray.forEach((task) => {
-    domString += `<div class="card bg-light mb-3" style="max-width: 18rem;">
-                      <div class="card-header">Tasks</div>
-                      <div class="card-body">
-                        <p class="card-text">${task.task}</p>
-                      </div>
-                    </div>`;
+    domString += `<div class="input-group-text w-25 task">
+                    <input type="checkbox" class="task-checkbox">
+                    <p class="task-desc">${task.task}<p>
+                  </div>
+                  `;
     $('#tasks').html(domString);
   });
 };
@@ -23,5 +23,11 @@ const tasksPage = () => {
       console.error('error in getting tasks', error);
     });
 };
+
+$('body').on('click', 'input[type=checkbox]', (e) => {
+  const taskToMove = $(e.target).closest('.task').text();
+  $('#completed-tasks').append(`<div>${taskToMove}</div>`);
+});
+
 
 export default tasksPage;
