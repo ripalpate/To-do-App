@@ -8,7 +8,7 @@
     "task2":
       {
         "task": "Attend meeting",
-        "isCompleted": true
+        "isCompleted": false
       },
     "task3":
       {
@@ -18,17 +18,17 @@
     "task4":
       {
         "task": "Read a book",
-        "isCompleted": true
+        "isCompleted": false
       },
     "task5":
       {
         "task": "Go for groecery shopping",
-        "isCompleted": true
+        "isCompleted": false
       },
     "task6":
       {
         "task": "Complete homework",
-        "isCompleted": true
+        "isCompleted": false
       }
   }
 }
