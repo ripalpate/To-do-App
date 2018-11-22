@@ -10,7 +10,6 @@ const inputBuilder = (task) => {
 };
 
 const gettingTaskFromForm = () => {
-  console.log($('#input-field').val());
   const task = {
     task: $('#input-field').val(),
     isCompleted: false,
@@ -31,7 +30,6 @@ const buildAddTask = () => {
 
 const addNewTask = () => {
   const newTask = gettingTaskFromForm();
-  console.log(newTask);
   tasksData.addNewTask(newTask)
     .then(() => {
       $('#add-edit-task').html('').hide();
@@ -41,6 +39,14 @@ const addNewTask = () => {
       console.error(error);
     });
 };
+
+$('body').on('keyup', '#input-field', (event) => {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    $('#add-task').click();
+  }
+});
+
 $('body').on('click', '#add-task', addNewTask);
 
 export default buildAddTask;
