@@ -58,7 +58,11 @@ const completedTask = (e) => {
     });
 };
 
+const initializeTasksPage = () => {
+  tasksPage();
+};
+
 $('body').on('click', 'input[type=checkbox]', completedTask);
 
 
-export default { tasksPage };
+export default initializeTasksPage;
