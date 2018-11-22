@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import $ from 'jquery';
 
-const checkLoginStatus = () => {
+const checkLoginStatus = (initializeTasksPage) => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       // console.log('user name', user.displayName);
@@ -11,6 +11,7 @@ const checkLoginStatus = () => {
       $('#navbar-button-auth').hide();
       $('#navbar-button-tasks').show();
       $('#navbar-button-logout').show();
+      initializeTasksPage();
     } else {
       $('#tasks').hide();
       $('#login-container').show();
