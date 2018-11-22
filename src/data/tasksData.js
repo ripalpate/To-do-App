@@ -21,4 +21,11 @@ const getAllTasks = () => new Promise((resolve, reject) => {
     });
 });
 
-export default { getAllTasks };
+const updateSingleTask = (taskObject, taskId) => axios.put(`${firebaseUrl}/tasks/${taskId}.json`, JSON.stringify(taskObject));
+// .then((result) => {
+//   resolve(result);
+// }).catch((error) => {
+//   reject(error);
+// });
+
+export default { getAllTasks, updateSingleTask };

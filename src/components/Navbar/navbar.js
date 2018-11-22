@@ -9,16 +9,16 @@ const navBarEvents = () => {
     if (e.target.id === 'navbar-button-logout') {
       firebase.auth().signOut().then(() => {
         $('#login-container').show();
-        $('#tasks').hide();
+        $('#tasks-container').hide();
       }).catch((err) => {
         console.error('you are still logged in', err);
       });
     } else if (e.target.id === 'navbar-button-tasks') {
       $('#login-container').hide();
-      $('#tasks').show();
+      $('#tasks-container').show();
     } else {
       $('#login-container').show();
-      $('#tasks').hide();
+      $('#tasks-container').hide();
     }
   });
 };
