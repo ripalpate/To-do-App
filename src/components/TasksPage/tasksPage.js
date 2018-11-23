@@ -66,9 +66,7 @@ const initializeTasksPage = () => {
 $('body').on('click', 'input[type=checkbox]', completedTask);
 
 const deleteTask = (e) => {
-  console.log(e.target);
   const idToDelete = e.target.dataset.deleteId;
-  console.log(idToDelete);
   tasksData.deleteTask(idToDelete)
     .then(() => {
       tasksPage();
