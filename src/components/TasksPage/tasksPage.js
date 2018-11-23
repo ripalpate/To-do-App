@@ -10,6 +10,7 @@ const printAllTasks = (tasksArray) => {
       domString += `<div class="input-group-text w-25 task">
                       <input type="checkbox">
                       <p class="task-desc" data-task-id=${task.id}>${task.task}<p>
+                      <button class="delete-button" data-delete-id=${task.id}>X</button>
                     </div>`;
       $('#tasks').html(domString);
     }
@@ -64,5 +65,18 @@ const initializeTasksPage = () => {
 
 $('body').on('click', 'input[type=checkbox]', completedTask);
 
+const deleteTask = (e) => {
+  console.log(e.target);
+  const idToDelete = e.target.dataset.deleteId;
+  console.log(idToDelete);
+  tasksData.deleteTask(idToDelete)
+    .then(() => {
+      tasksPage();
+    }).catch((error) => {
+      console.error(error);
+    });
+};
+
+$('body').on('click', '.delete-button', deleteTask);
 
 export default initializeTasksPage;
