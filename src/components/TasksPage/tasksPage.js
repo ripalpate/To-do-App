@@ -10,7 +10,7 @@ const printAllTasks = (tasksArray) => {
       domString += `<div class="input-group-text w-25 task">
                       <input type="checkbox">
                       <p class="task-desc" data-task-id=${task.id}>${task.task}<p>
-                      <button class="delete-button" data-delete-id=${task.id}>X</button>
+                      <input class="delete-button" data-delete-id=${task.id} type="image" src="https://cdn1.iconfinder.com/data/icons/color-bold-style/21/56-512.png" width="20px"></input>
                     </div>`;
       $('#tasks').html(domString);
     }
