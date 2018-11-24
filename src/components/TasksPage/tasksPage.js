@@ -45,7 +45,8 @@ const completedTask = (e) => {
   tasksData.updateSingleTask(updatedtaskObject, idToUpdate)
     .then(() => {
       if (iscompleted) {
-        const taskToMove = $(e.target).closest('.task').text();
+        const taskToMove = $(e.target).closest('.task').text;
+        console.log(taskToMove);
         $('#completed-tasks').append(`<div id="${idToUpdate}-done">${taskToMove}</div>`);
         $(elementToUpdate).css('text-decoration', 'line-through');
       } else {

@@ -3,8 +3,9 @@ import tasksData from '../../data/tasksData';
 import initializeTasksPage from '../TasksPage/tasksPage';
 
 const inputBuilder = (task) => {
+  console.log(task.task);
   const inputField = `<div>
-                        <input id="input-field" type="text" placeholder="Enter task here" value=${task.task}>
+                        <input id="input-field" type="text" placeholder="Enter task here" value="${task.task}">
                       </div>`;
   return inputField;
 };
@@ -51,10 +52,8 @@ $('body').on('click', '#add-task', addNewTask);
 
 const showEditInput = (e) => {
   const idToEdit = e.target.dataset.editId;
-  console.log(idToEdit);
   tasksData.getSingleTask(idToEdit)
     .then((singleTask) => {
-      console.log(singleTask);
       let domString = '<h2> Edit Task </h2>';
       domString += inputBuilder(singleTask);
       domString += `<button id="edit-task" data-single-edit-id=${singleTask.id}>Save Task</button>`;
@@ -67,7 +66,6 @@ const showEditInput = (e) => {
 
 const updteTask = (e) => {
   const updateTask = gettingTaskFromInput();
-  console.log(updateTask);
   const taskId = e.target.dataset.singleEditId;
   tasksData.updateSingleTask(updateTask, taskId)
     .then(() => {
