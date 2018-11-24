@@ -11,7 +11,8 @@ const printAllTasks = (tasksArray) => {
                       <input type="checkbox">
                       <p class="task-desc" data-task-id=${task.id}>${task.task}<p>
                       <input class="delete-button" data-delete-id=${task.id} type="image" src="https://cdn1.iconfinder.com/data/icons/color-bold-style/21/56-512.png" width="20px"></input>
-                    </div>`;
+                      <input class="edit-button" data-edit-id=${task.id} type="image" src="https://www.clipartmax.com/png/middle/159-1594534_people-confuse-two-pencil-icons-pencil-edit-icon-png.png" width="30px"></input>
+                      </div>`;
       $('#tasks').html(domString);
     }
   });

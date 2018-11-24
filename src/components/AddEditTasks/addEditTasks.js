@@ -4,12 +4,12 @@ import initializeTasksPage from '../TasksPage/tasksPage';
 
 const inputBuilder = (task) => {
   const inputField = `<div>
-                        <input id="input-field" type="text" placeholder="Enter message here" value=${task.task}>
+                        <input id="input-field" type="text" placeholder="Enter task here" value=${task.task}>
                       </div>`;
   return inputField;
 };
 
-const gettingTaskFromForm = () => {
+const gettingTaskFromInput = () => {
   const task = {
     task: $('#input-field').val(),
     isCompleted: false,
@@ -29,7 +29,7 @@ const buildAddTask = () => {
 };
 
 const addNewTask = () => {
-  const newTask = gettingTaskFromForm();
+  const newTask = gettingTaskFromInput();
   tasksData.addNewTask(newTask)
     .then(() => {
       $('#add-edit-task').html('').hide();
@@ -48,5 +48,38 @@ $('body').on('keyup', '#input-field', (event) => {
 });
 
 $('body').on('click', '#add-task', addNewTask);
+
+const showEditInput = (e) => {
+  const idToEdit = e.target.dataset.editId;
+  console.log(idToEdit);
+  tasksData.getSingleTask(idToEdit)
+    .then((singleTask) => {
+      console.log(singleTask);
+      let domString = '<h2> Edit Task </h2>';
+      domString += inputBuilder(singleTask);
+      domString += `<button id="edit-task" data-single-edit-id=${singleTask.id}>Save Task</button>`;
+      $('#add-edit-task').html(domString).show();
+      $('#tasks-container').hide();
+    }).catch((error) => {
+      console.error(error);
+    });
+};
+
+const updteTask = (e) => {
+  const updateTask = gettingTaskFromInput();
+  console.log(updateTask);
+  const taskId = e.target.dataset.singleEditId;
+  tasksData.updateSingleTask(updateTask, taskId)
+    .then(() => {
+      $('#add-edit-task').html('').hide();
+      $('#tasks-container').show();
+      initializeTasksPage();
+    }).catch((error) => {
+      console.error(error);
+    });
+};
+
+$('body').on('click', '.edit-button', showEditInput);
+$('body').on('click', '#edit-task', updteTask);
 
 export default buildAddTask;
