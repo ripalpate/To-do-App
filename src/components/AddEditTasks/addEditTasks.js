@@ -77,6 +77,14 @@ const updteTask = (e) => {
 };
 
 $('body').on('click', '.edit-button', showEditInput);
+
+$('body').on('keyup', '#input-field', (event) => {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    $('#edit-task').click();
+  }
+});
+
 $('body').on('click', '#edit-task', updteTask);
 
 export default buildAddTask;

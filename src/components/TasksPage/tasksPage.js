@@ -80,6 +80,8 @@ const deleteTask = (e) => {
 };
 
 $('body').on('click', '.delete-button', deleteTask);
+
+// Delete from completed task
 $('body').on('click', '.delete-button-completed', (e) => {
   const idTodeleteCompleteTask = e.target.dataset.completetaskId;
   tasksData.deleteTask(idTodeleteCompleteTask)
