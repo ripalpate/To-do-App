@@ -3,7 +3,6 @@ import tasksData from '../../data/tasksData';
 import initializeTasksPage from '../TasksPage/tasksPage';
 
 const inputBuilder = (task) => {
-  console.log(task.task);
   const inputField = `<div>
                         <input id="input-field" type="text" placeholder="Enter task here" value="${task.task}">
                       </div>`;

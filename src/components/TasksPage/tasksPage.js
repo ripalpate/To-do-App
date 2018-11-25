@@ -48,7 +48,7 @@ const completedTask = (e) => {
     .then(() => {
       if (iscompleted) {
         const taskToMove = $(e.target).closest('.task').text();
-        $('#completed-tasks').append(`<div id="${idToUpdate}-done">${taskToMove} <input class="delete-button-completed" data-x-id="${idToDelete}"type="image" src="https://cdn1.iconfinder.com/data/icons/color-bold-style/21/56-512.png" width="20px"></input></div>`);
+        $('#completed-tasks').append(`<div id="${idToUpdate}-done">${taskToMove} <input class="delete-button-completed" data-completetask-id="${idToDelete}"type="image" src="https://cdn1.iconfinder.com/data/icons/color-bold-style/21/56-512.png" width="20px"></input></div>`);
         $(elementToUpdate).css('text-decoration', 'line-through');
       } else {
         let incompleteTaskId = '#';
@@ -81,8 +81,8 @@ const deleteTask = (e) => {
 
 $('body').on('click', '.delete-button', deleteTask);
 $('body').on('click', '.delete-button-completed', (e) => {
-  const x = e.target.dataset.xId;
-  tasksData.deleteTask(x)
+  const idTodeleteCompleteTask = e.target.dataset.completetaskId;
+  tasksData.deleteTask(idTodeleteCompleteTask)
     .then(() => {
       tasksPage();
       $('#completed-tasks').html('');
