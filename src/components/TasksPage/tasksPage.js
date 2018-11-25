@@ -41,13 +41,14 @@ const completedTask = (e) => {
   const iscompleted = $(element).hasClass('checked');
   const elementToUpdate = $(e.target).siblings('p')[0];
   const idToUpdate = elementToUpdate.dataset.taskId;
+  const elementToDelete = $(e.target).next().next().children('input')[0];
+  const idToDelete = elementToDelete.dataset.deleteId;
   const updatedtaskObject = gettingTaskFromList(iscompleted, elementToUpdate);
   tasksData.updateSingleTask(updatedtaskObject, idToUpdate)
     .then(() => {
       if (iscompleted) {
-        const taskToMove = $(e.target).closest('.task').text;
-        console.log(taskToMove);
-        $('#completed-tasks').append(`<div id="${idToUpdate}-done">${taskToMove}</div>`);
+        const taskToMove = $(e.target).closest('.task').text();
+        $('#completed-tasks').append(`<div id="${idToUpdate}-done">${taskToMove} <input class="delete-button-completed" data-x-id="${idToDelete}"type="image" src="https://cdn1.iconfinder.com/data/icons/color-bold-style/21/56-512.png" width="20px"></input></div>`);
         $(elementToUpdate).css('text-decoration', 'line-through');
       } else {
         let incompleteTaskId = '#';
@@ -67,6 +68,7 @@ const initializeTasksPage = () => {
 
 $('body').on('click', 'input[type=checkbox]', completedTask);
 
+// Delete from Open Tasks
 const deleteTask = (e) => {
   const idToDelete = e.target.dataset.deleteId;
   tasksData.deleteTask(idToDelete)
@@ -78,5 +80,15 @@ const deleteTask = (e) => {
 };
 
 $('body').on('click', '.delete-button', deleteTask);
+$('body').on('click', '.delete-button-completed', (e) => {
+  const x = e.target.dataset.xId;
+  tasksData.deleteTask(x)
+    .then(() => {
+      tasksPage();
+      $('#completed-tasks').html('');
+    }).catch((error) => {
+      console.error(error);
+    });
+});
 
 export default initializeTasksPage;
