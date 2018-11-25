@@ -16,6 +16,7 @@ const navBarEvents = () => {
     } else if (e.target.id === 'navbar-button-tasks') {
       $('#login-container').hide();
       $('#tasks-container').show();
+      $('#add-edit-task').html('').hide();
     } else {
       $('#login-container').show();
       $('#tasks-container').hide();

@@ -26,6 +26,7 @@ const buildAddTask = () => {
   domString += '<button class="btn btn-primary m-2" id="add-task"> Save New Task</button>';
   $('#add-edit-task').html(domString).show();
   $('#tasks-container').hide();
+  $('#input-field').focus();
 };
 
 const addNewTask = () => {
@@ -58,6 +59,7 @@ const showEditInput = (e) => {
       domString += `<button class="btn btn-warning m-2" id="edit-task" data-single-edit-id=${singleTask.id}>Save Task</button>`;
       $('#add-edit-task').html(domString).show();
       $('#tasks-container').hide();
+      $('#input-field').focus();
     }).catch((error) => {
       console.error(error);
     });
@@ -86,5 +88,9 @@ $('body').on('keyup', '#input-field', (event) => {
 });
 
 $('body').on('click', '#edit-task', updteTask);
+
+// $(document).ready(() => {
+//   $('#input-field').focus();
+// });
 
 export default buildAddTask;

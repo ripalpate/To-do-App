@@ -81,13 +81,15 @@ const deleteTask = (e) => {
 
 $('body').on('click', '.delete-button', deleteTask);
 
-// Delete from completed task
+// Delete from completed task and opentask
 $('body').on('click', '.delete-button-completed', (e) => {
+  const elementFromCompletedTask = e.target.parentNode;
   const idTodeleteCompleteTask = e.target.dataset.completetaskId;
+  const idToOpenTask = document.querySelectorAll(`[data-task-id='${idTodeleteCompleteTask}']`)[0].parentElement;
   tasksData.deleteTask(idTodeleteCompleteTask)
     .then(() => {
-      tasksPage();
-      $('#completed-tasks').html('');
+      $(idToOpenTask).remove();
+      $(elementFromCompletedTask).remove();
     }).catch((error) => {
       console.error(error);
     });
