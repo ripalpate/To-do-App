@@ -4,7 +4,7 @@ import initializeTasksPage from '../TasksPage/tasksPage';
 
 const inputBuilder = (task) => {
   const inputField = `<div>
-                        <input id="input-field" type="text" placeholder="Enter task here" value="${task.task}">
+                        <input class= "m-2" id="input-field" type="text" placeholder="Enter task here" value="${task.task}">
                       </div>`;
   return inputField;
 };
@@ -21,9 +21,9 @@ const buildAddTask = () => {
   const emptyTask = {
     task: '',
   };
-  let domString = '<h2> Add New Task </h2>';
+  let domString = '<h2 class="m-2"> Add New Task </h2>';
   domString += inputBuilder(emptyTask);
-  domString += '<button id="add-task"> Save New Task </button>';
+  domString += '<button class="btn btn-primary m-2" id="add-task"> Save New Task</button>';
   $('#add-edit-task').html(domString).show();
   $('#tasks-container').hide();
 };
@@ -53,9 +53,9 @@ const showEditInput = (e) => {
   const idToEdit = e.target.dataset.editId;
   tasksData.getSingleTask(idToEdit)
     .then((singleTask) => {
-      let domString = '<h2> Edit Task </h2>';
+      let domString = '<h2 class="m-2"> Edit Task </h2>';
       domString += inputBuilder(singleTask);
-      domString += `<button id="edit-task" data-single-edit-id=${singleTask.id}>Save Task</button>`;
+      domString += `<button class="btn btn-warning m-2" id="edit-task" data-single-edit-id=${singleTask.id}>Save Task</button>`;
       $('#add-edit-task').html(domString).show();
       $('#tasks-container').hide();
     }).catch((error) => {

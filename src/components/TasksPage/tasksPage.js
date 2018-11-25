@@ -4,7 +4,7 @@ import tasksData from '../../data/tasksData';
 
 const printAllTasks = (tasksArray) => {
   let domString = '';
-  domString += '<h5 class="task-heading">Tasks </h5>';
+  domString += '<h5 class="task-heading text-center">Tasks </h5>';
   tasksArray.forEach((task) => {
     if (task.isCompleted === false) {
       domString += `<div class="input-group-text w-25 task">
