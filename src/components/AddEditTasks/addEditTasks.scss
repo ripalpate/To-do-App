@@ -1,0 +1,15 @@
+@import "../../styles/variables";
+
+#input-field {
+  border-radius: 8px; 
+}
+
+.add-new-task {
+  font-family:$philosopher-font !important;
+  @include default-font (2em);
+}
+
+.edit-task-heading {
+  font-family:$philosopher-font !important;
+  @include default-font (2em);
+}

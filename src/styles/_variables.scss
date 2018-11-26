@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch|Caveat|Philosopher');
+
+$backgroundImage : url('http://cr103.com/collections/Paper/tork_packing_paper.jpg');
+$backgroundColor:  #e9ecef;
+$centerMargin: 0 auto;
+$cabin-font: 'Cabin Sketch', cursive;
+$caveat-font: 'Caveat', cursive;
+$philosopher-font: 'Philosopher', sans-serif;
+
+@mixin default-font ($fontsize) {
+  font-size: $fontsize;
+  color: darkred;
+  text-align: center;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}

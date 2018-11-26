@@ -1,13 +1,16 @@
-// .checked {
-//   text-decoration: line-through;
-// }
+@import "../../styles/variables";
+
 .task {
-  margin: 0 auto;
+  margin: $centerMargin;
   max-width: 500px;
+  font-family: $caveat-font;
+  font-size: 1.75em !important;
   .delete-button {
     margin-left: 50px;
   }
 }
-// .delete-button {
-//   margin-left: 40px;
-// }
+.header {
+  font-family:$philosopher-font !important;
+  @include default-font (2em);
+}
+

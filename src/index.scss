@@ -1,19 +1,22 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./styles/variables";
 
 body {
-  // background-color: mediumseagreen;
-  background-image: url('http://cr103.com/collections/Paper/tork_packing_paper.jpg');
-  // background-image: url('https://wallpaperlayer.com/img/2015/5/brown-paper-texture-background-8086-8400-hd-wallpapers.jpg');
+  background-image: $backgroundImage;
   background-size: cover;
 }
 #completed-tasks {
-  background-color: #e9ecef;
   max-width: 500px;
   border-radius: 0.25em;
   display: inline-block;
-  padding-left: 165px;
-  padding-right: 165px;
-}
-input[type="image" i] {
-  background: transparent;
+
+  .heading-completed {
+    font-family:$philosopher-font !important;
+    @include default-font (2em);
+  }
+  .completed-task-text {
+    font-family: $caveat-font;
+    font-size: 1.75em !important;
+    background-color: $backgroundColor;
+  }
 }
