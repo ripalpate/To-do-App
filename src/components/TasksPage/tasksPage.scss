@@ -3,4 +3,11 @@
 // }
 .task {
   margin: 0 auto;
+  max-width: 500px;
+  .delete-button {
+    margin-left: 50px;
+  }
 }
+// .delete-button {
+//   margin-left: 40px;
+// }

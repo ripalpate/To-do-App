@@ -56,7 +56,7 @@ const showEditInput = (e) => {
     .then((singleTask) => {
       let domString = '<h2 class="m-2"> Edit Task </h2>';
       domString += inputBuilder(singleTask);
-      domString += `<button class="btn btn-warning m-2" id="edit-task" data-single-edit-id=${singleTask.id}>Save Task</button>`;
+      domString += `<button class="btn btn-primary m-2" id="edit-task" data-single-edit-id=${singleTask.id}>Save Task</button>`;
       $('#add-edit-task').html(domString).show();
       $('#tasks-container').hide();
       $('#input-field').focus();
