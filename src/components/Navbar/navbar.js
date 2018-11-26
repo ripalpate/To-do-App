@@ -20,6 +20,8 @@ const navBarEvents = () => {
     } else {
       $('#login-container').show();
       $('#tasks-container').hide();
+      $('#completed-tasks').hide();
+      $('#show-task-input').hide();
     }
   });
 };

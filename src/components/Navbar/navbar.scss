@@ -1,0 +1,23 @@
+@import "../../styles/variables";
+
+#navbar-button-tasks, #navbar-button-logout, #navbar-button-auth {
+  background-color: bisque;
+  color: black;
+  padding: 0px 10px;
+  margin: 10px;
+  border-radius: 5px;
+  font-family:$philosopher-font !important;
+  font-size: 1.25em;
+}
+#navbar-button-tasks:hover {
+  background-color: cadetblue;
+  cursor: pointer;
+}
+#navbar-button-auth:hover {
+  background-color: cadetblue;
+  cursor: pointer;
+}
+#navbar-button-logout:hover {
+  background-color: cadetblue;
+  cursor: pointer;
+}

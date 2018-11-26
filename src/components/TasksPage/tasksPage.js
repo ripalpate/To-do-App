@@ -4,14 +4,14 @@ import tasksData from '../../data/tasksData';
 
 const printAllTasks = (tasksArray) => {
   let domString = '';
-  domString += '<h5 class="task-heading text-center">Tasks </h5>';
+  domString += '<h5 class="header text-center">Tasks </h5>';
   tasksArray.forEach((task) => {
     if (task.isCompleted === false) {
-      domString += `<div class="input-group-text w-25 task">
+      domString += `<div class="input-group-text task d-flex">
                       <input type="checkbox">
-                      <p class="task-desc" data-task-id=${task.id}>${task.task}<p>
-                      <input class="delete-button" data-delete-id=${task.id} type="image" src="https://cdn1.iconfinder.com/data/icons/color-bold-style/21/56-512.png" width="20px"></input>
-                      <input class="edit-button" data-edit-id=${task.id} type="image" src="https://www.clipartmax.com/png/middle/159-1594534_people-confuse-two-pencil-icons-pencil-edit-icon-png.png" width="30px"></input>
+                      <p class="task-desc m-1" data-task-id=${task.id}>${task.task}<p>
+                      <input class="delete-button pt-1" data-delete-id=${task.id} type="image" src="https://cdn1.iconfinder.com/data/icons/color-bold-style/21/56-512.png" width="20px"></input>
+                      <input class="edit-button pt-1 ml-2" data-edit-id=${task.id} type="image" src="http://www.iconarchive.com/download/i49407/designcontest/outline/Pencil.ico" width="20px"></input>
                       </div>`;
       $('#tasks').html(domString);
     }
@@ -48,7 +48,7 @@ const completedTask = (e) => {
     .then(() => {
       if (iscompleted) {
         const taskToMove = $(e.target).closest('.task').text();
-        $('#completed-tasks').append(`<div id="${idToUpdate}-done">${taskToMove} <input class="delete-button-completed" data-completetask-id="${idToDelete}"type="image" src="https://cdn1.iconfinder.com/data/icons/color-bold-style/21/56-512.png" width="20px"></input></div>`);
+        $('#completed-tasks').append(`<div class="completed-task-text" id="${idToUpdate}-done">${taskToMove} <input class="delete-button-completed" data-completetask-id="${idToDelete}"type="image" src="https://cdn1.iconfinder.com/data/icons/color-bold-style/21/56-512.png" width="20px"></input></div>`);
         $(elementToUpdate).css('text-decoration', 'line-through');
       } else {
         let incompleteTaskId = '#';
