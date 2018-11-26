@@ -13,3 +13,8 @@
   font-family:$philosopher-font !important;
   @include default-font (2em);
 }
+
+#add-task, #edit-task {
+  font-family: $caveat-font !important;
+  font-size: 1.5em;
+}

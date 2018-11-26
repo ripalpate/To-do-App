@@ -13,10 +13,15 @@ body {
   .heading-completed {
     font-family:$philosopher-font !important;
     @include default-font (2em);
+    padding-top: 45px;
   }
   .completed-task-text {
     font-family: $caveat-font;
     font-size: 1.75em !important;
     background-color: $backgroundColor;
   }
+}
+#show-task-input {
+  font-family: $caveat-font !important;
+  font-size: 1.5em;
 }
