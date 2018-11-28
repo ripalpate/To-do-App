@@ -3,31 +3,37 @@
     "task1" : 
       {
         "task": "Walk the dog",
-        "isCompleted": false
+        "created": "11/28/2018, 11:48:30 AM",
+        "isCompleted": false,
       },
     "task2":
       {
         "task": "Attend meeting",
+        "created": "11/28/2018, 11:45:30 AM",
         "isCompleted": false
       },
     "task3":
       {
         "task": "Complete Volunteer work",
+        "created": "11/28/2018, 11:42:28 AM",
         "isCompleted": true
       },
     "task4":
       {
         "task": "Read a book",
+        "created": "11/28/2018, 11:41:11 AM",
         "isCompleted": false
       },
     "task5":
       {
         "task": "Go for groecery shopping",
+        "created": "11/28/2018, 10:30:30 AM",
         "isCompleted": false
       },
     "task6":
       {
         "task": "Complete homework",
+        "created": "11/28/2018, 10:25:30 AM",
         "isCompleted": false
       }
   }
