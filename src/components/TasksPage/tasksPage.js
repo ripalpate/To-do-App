@@ -10,7 +10,7 @@ const printAllTasks = (tasksArray) => {
     if (task.isCompleted === false) {
       domString += `<div class="input-group-text task d-flex">
                       <input type="checkbox">
-                      <p class="task-desc m-1" data-task-id=${task.id}>${task.task}<p>
+                      <p class="task-desc m-1" data-task-id=${task.id}>${task.task} created: ${task.created}<p>
                       <input class="delete-button pt-1" data-delete-id=${task.id} type="image" src="https://cdn1.iconfinder.com/data/icons/color-bold-style/21/56-512.png" width="20px"></input>
                       <input class="edit-button pt-1 ml-2" data-edit-id=${task.id} type="image" src="http://www.iconarchive.com/download/i49407/designcontest/outline/Pencil.ico" width="20px"></input>
                       </div>`;
@@ -34,6 +34,7 @@ const gettingTaskFromList = (iscompleted, elementToUpdate) => {
     task: $(elementToUpdate).text(),
     isCompleted: iscompleted,
   };
+  console.log(task);
   return task;
 };
 

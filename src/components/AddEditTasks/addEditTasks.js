@@ -3,6 +3,7 @@ import tasksData from '../../data/tasksData';
 import initializeTasksPage from '../TasksPage/tasksPage';
 import './addEditTasks.scss';
 import timeStamp from '../../helpers/timeStamp';
+import authHelpers from '../../helpers/authHelpers';
 
 const inputBuilder = (task) => {
   const inputField = `<div>
@@ -18,6 +19,7 @@ const gettingTaskFromInput = () => {
     task: $('#input-field').val(),
     created: currentTime,
     isCompleted: false,
+    uid: authHelpers.getCurrentUid(),
   };
   console.log(task);
   return task;
