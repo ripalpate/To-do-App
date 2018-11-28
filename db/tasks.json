@@ -3,32 +3,38 @@
     "task1" : 
       {
         "task": "Walk the dog",
-        "isCompleted": false
+        "isCompleted": false,
+        "uid": "2UAdUSjxfCVHGQlMHo0gYHxKSZx1"
       },
     "task2":
       {
         "task": "Attend meeting",
-        "isCompleted": false
+        "isCompleted": false,
+        "uid": "2UAdUSjxfCVHGQlMHo0gYHxKSZx1"
       },
     "task3":
       {
         "task": "Complete Volunteer work",
-        "isCompleted": true
+        "isCompleted": true,
+        "uid": "2UAdUSjxfCVHGQlMHo0gYHxKSZx1"
       },
     "task4":
       {
         "task": "Read a book",
-        "isCompleted": false
+        "isCompleted": false,
+        "uid": "2UAdUSjxfCVHGQlMHo0gYHxKSZx1"
       },
     "task5":
       {
         "task": "Go for groecery shopping",
-        "isCompleted": false
+        "isCompleted": false,
+        "uid": "2UAdUSjxfCVHGQlMHo0gYHxKSZx1"
       },
     "task6":
       {
         "task": "Complete homework",
-        "isCompleted": false
+        "isCompleted": false,
+        "uid": "iDFbgXxvlONNZvL5wstsePaIZL42"
       }
   }
 }
