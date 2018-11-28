@@ -54,7 +54,6 @@ const addNewTask = () => {
 };
 
 $('body').on('keyup', '#input-field', (event) => {
-  event.preventDefault();
   if (event.keyCode === 13) {
     $('#add-task').click();
   }
@@ -95,7 +94,6 @@ const updteTask = (e) => {
 $('body').on('click', '.edit-button', showEditInput);
 
 $('body').on('keyup', '#input-field', (event) => {
-  event.preventDefault();
   if (event.keyCode === 13) {
     $('#edit-task').click();
   }
