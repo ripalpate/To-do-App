@@ -34,6 +34,7 @@ const gettingTaskFromList = (iscompleted, elementToUpdate) => {
   const task = {
     task: $(elementToUpdate).text(),
     isCompleted: iscompleted,
+    uid: authHelpers.getCurrentUid(),
   };
   console.log(task);
   return task;
