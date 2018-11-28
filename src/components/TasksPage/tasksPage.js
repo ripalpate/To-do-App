@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import './tasksPage.scss';
 import tasksData from '../../data/tasksData';
+import authHelpers from '../../helpers/authHelpers';
 
 const printAllTasks = (tasksArray) => {
   let domString = '';
@@ -19,7 +20,8 @@ const printAllTasks = (tasksArray) => {
 };
 
 const tasksPage = () => {
-  tasksData.getAllTasks()
+  const uid = authHelpers.getCurrentUid();
+  tasksData.getAllTasks(uid)
     .then((tasksArray) => {
       printAllTasks(tasksArray);
     }).catch((error) => {
