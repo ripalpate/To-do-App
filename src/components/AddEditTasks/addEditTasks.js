@@ -14,7 +14,6 @@ const inputBuilder = (task) => {
 
 const gettingTaskFromInput = () => {
   const currentTime = timeStamp();
-  console.log(currentTime);
   const task = {
     task: $('#input-field').val(),
     created: currentTime,
@@ -22,7 +21,6 @@ const gettingTaskFromInput = () => {
     uid: authHelpers.getCurrentUid(),
     completedAt: '',
   };
-  console.log(task);
   return task;
 };
 

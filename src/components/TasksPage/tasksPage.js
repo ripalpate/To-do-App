@@ -40,7 +40,6 @@ const gettingTaskFromList = (iscompleted, elementToUpdate, time, openTaskTime) =
     completedAt: time,
     created: openTaskTime,
   };
-  console.log(task);
   return task;
 };
 
