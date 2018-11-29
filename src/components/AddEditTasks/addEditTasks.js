@@ -20,6 +20,7 @@ const gettingTaskFromInput = () => {
     created: currentTime,
     isCompleted: false,
     uid: authHelpers.getCurrentUid(),
+    completedAt: '',
   };
   console.log(task);
   return task;

@@ -6,7 +6,7 @@
   font-family: $caveat-font;
   font-size: 1.75em !important;
   .delete-button {
-    margin-left: 50px;
+    margin-left: 10px;
   }
 }
 .header {
@@ -19,3 +19,20 @@
   font-size: .65em !important;
 }
 
+#tasks .input-group-text {
+  display : block;
+  text-align: left;
+}
+
+#tasks .input-group-text * {
+  display: inline-block;
+}
+
+#tasks .input-group-text span {
+  padding-left: 20px;
+  display: block;
+}
+
+#tasks .input-group-text .delete-button, #tasks .input-group-text .edit-button {
+  float: right;
+}
