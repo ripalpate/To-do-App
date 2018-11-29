@@ -14,7 +14,7 @@ const printAllTasks = (tasksArray) => {
                       <p class="task-desc m-1" data-task-id=${task.id}>${task.task}<p>
                       <input class="delete-button pt-1" data-delete-id=${task.id} type="image" src="https://cdn1.iconfinder.com/data/icons/color-bold-style/21/56-512.png" width="20px"></input>
                       <input class="edit-button pt-1 ml-2" data-edit-id=${task.id} type="image" src="http://www.iconarchive.com/download/i49407/designcontest/outline/Pencil.ico" width="20px"></input><br>
-                      <div class="timeStamp" data-time-id="${task.id}">${task.created} </div>
+                      <span class="timeStamp" data-time-id="${task.id}">${task.created} </span>
                       </div>`;
       $('#tasks').html(domString);
     }
@@ -51,8 +51,8 @@ const completedTask = (e) => {
   const elementToDelete = $(e.target).next().next().children('input')[0];
   const idToDelete = elementToDelete.dataset.deleteId;
   const time = $(e.target).next().next().children('span')[0];
-  const idToTime = time.dataset.timeId;
-  console.log(idToTime);
+  // const idToTime = time.dataset.timeId;
+  console.log(time);
   const updatedtaskObject = gettingTaskFromList(iscompleted, elementToUpdate, time);
   tasksData.updateSingleTask(updatedtaskObject, idToUpdate)
     .then(() => {
