@@ -2,17 +2,19 @@ import $ from 'jquery';
 import './tasksPage.scss';
 import tasksData from '../../data/tasksData';
 import authHelpers from '../../helpers/authHelpers';
+// import timeStamp from '../../helpers/timeStamp';
 
 const printAllTasks = (tasksArray) => {
   let domString = '';
   domString += '<h5 class="header text-center">Tasks </h5>';
   tasksArray.forEach((task) => {
     if (task.isCompleted === false) {
-      domString += `<div class="input-group-text task d-flex">
+      domString += `<div class="input-group-text tasks-wrapper task">
                       <input type="checkbox">
                       <p class="task-desc m-1" data-task-id=${task.id}>${task.task}<p>
                       <input class="delete-button pt-1" data-delete-id=${task.id} type="image" src="https://cdn1.iconfinder.com/data/icons/color-bold-style/21/56-512.png" width="20px"></input>
-                      <input class="edit-button pt-1 ml-2" data-edit-id=${task.id} type="image" src="http://www.iconarchive.com/download/i49407/designcontest/outline/Pencil.ico" width="20px"></input>
+                      <input class="edit-button pt-1 ml-2" data-edit-id=${task.id} type="image" src="http://www.iconarchive.com/download/i49407/designcontest/outline/Pencil.ico" width="20px"></input><br>
+                      <span class="timeStamp" data-time-id="${task.id}">${task.created} </span>
                       </div>`;
       $('#tasks').html(domString);
     }
@@ -29,11 +31,14 @@ const tasksPage = () => {
     });
 };
 
-const gettingTaskFromList = (iscompleted, elementToUpdate) => {
+const gettingTaskFromList = (iscompleted, elementToUpdate, time) => {
   const task = {
     task: $(elementToUpdate).text(),
     isCompleted: iscompleted,
+    uid: authHelpers.getCurrentUid(),
+    created: $(time).text(),
   };
+  console.log(task);
   return task;
 };
 
@@ -45,7 +50,10 @@ const completedTask = (e) => {
   const idToUpdate = elementToUpdate.dataset.taskId;
   const elementToDelete = $(e.target).next().next().children('input')[0];
   const idToDelete = elementToDelete.dataset.deleteId;
-  const updatedtaskObject = gettingTaskFromList(iscompleted, elementToUpdate);
+  const time = $(e.target).next().next().children('span')[0];
+  // const idToTime = time.dataset.timeId;
+  console.log(time);
+  const updatedtaskObject = gettingTaskFromList(iscompleted, elementToUpdate, time);
   tasksData.updateSingleTask(updatedtaskObject, idToUpdate)
     .then(() => {
       if (iscompleted) {

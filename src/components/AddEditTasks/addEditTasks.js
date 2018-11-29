@@ -2,6 +2,8 @@ import $ from 'jquery';
 import tasksData from '../../data/tasksData';
 import initializeTasksPage from '../TasksPage/tasksPage';
 import './addEditTasks.scss';
+import timeStamp from '../../helpers/timeStamp';
+import authHelpers from '../../helpers/authHelpers';
 
 const inputBuilder = (task) => {
   const inputField = `<div>
@@ -11,16 +13,22 @@ const inputBuilder = (task) => {
 };
 
 const gettingTaskFromInput = () => {
+  const currentTime = timeStamp();
+  console.log(currentTime);
   const task = {
     task: $('#input-field').val(),
+    created: currentTime,
     isCompleted: false,
+    uid: authHelpers.getCurrentUid(),
   };
+  console.log(task);
   return task;
 };
 
 const buildAddTask = () => {
   const emptyTask = {
     task: '',
+    created: '',
   };
   let domString = '<div class="text-center m-4">';
   domString += '<h2 class="m-2 add-new-task"> Add New Task </h2>';
@@ -34,6 +42,7 @@ const buildAddTask = () => {
 
 const addNewTask = () => {
   const newTask = gettingTaskFromInput();
+  // console.log(newTask);
   tasksData.addNewTask(newTask)
     .then(() => {
       $('#add-edit-task').html('').hide();
@@ -45,7 +54,6 @@ const addNewTask = () => {
 };
 
 $('body').on('keyup', '#input-field', (event) => {
-  event.preventDefault();
   if (event.keyCode === 13) {
     $('#add-task').click();
   }
@@ -86,7 +94,6 @@ const updteTask = (e) => {
 $('body').on('click', '.edit-button', showEditInput);
 
 $('body').on('keyup', '#input-field', (event) => {
-  event.preventDefault();
   if (event.keyCode === 13) {
     $('#edit-task').click();
   }
