@@ -42,7 +42,7 @@ const buildAddTask = () => {
 
 const addNewTask = () => {
   const newTask = gettingTaskFromInput();
-  console.log(newTask);
+  // console.log(newTask);
   tasksData.addNewTask(newTask)
     .then(() => {
       $('#add-edit-task').html('').hide();

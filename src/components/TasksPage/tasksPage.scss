@@ -2,7 +2,7 @@
 
 .task {
   margin: $centerMargin;
-  max-width: 500px;
+  // max-width: 500px;
   font-family: $caveat-font;
   font-size: 1.75em !important;
   .delete-button {
@@ -16,8 +16,15 @@
 }
 
 .timeStamp {
-  font-size: .5em !important;
+  font-size: .75em !important;
   // display:block;
   // text-align: right !important;
   // padding: 15px;
+}
+
+.tasks-wrapper{
+  max-width: 700px;
+}
+.task-desc, .delete-button, .edit-button {
+  display: inline !important;
 }
