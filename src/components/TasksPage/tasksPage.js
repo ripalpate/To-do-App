@@ -59,7 +59,7 @@ const completedTask = (e) => {
     .then(() => {
       if (iscompleted) {
         const taskToMove = $(elementToUpdate).text();
-        $('#completed-tasks').append(`<div class="completed-task-text" id="${idToUpdate}-done">${taskToMove} <input class="delete-button-completed" data-completetask-id="${idToDelete}"type="image" src="https://cdn1.iconfinder.com/data/icons/color-bold-style/21/56-512.png" width="20px"></input><span class="">${time} </span></div>`);
+        $('#completed-tasks').append(`<div class="comp-tasks"><div class="completed-task-text" id="${idToUpdate}-done">${taskToMove} <input class="delete-button-completed" data-completetask-id="${idToDelete}"type="image" src="https://cdn1.iconfinder.com/data/icons/color-bold-style/21/56-512.png" width="20px"></input><span class="complete-time">${time} </span></div></div>`);
         $(elementToUpdate).css('text-decoration', 'line-through');
       } else {
         let incompleteTaskId = '#';
