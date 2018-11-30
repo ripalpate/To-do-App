@@ -8,6 +8,10 @@
   border-radius: 5px;
   font-family:$philosopher-font !important;
   font-size: 1.25em;
+  max-width:350px;
+}
+.nav-item {
+  margin: 0 auto;
 }
 #navbar-button-tasks:hover {
   background-color: cadetblue;
@@ -20,4 +24,11 @@
 #navbar-button-logout:hover {
   background-color: cadetblue;
   cursor: pointer;
+}
+
+@media (min-width:992px) {
+  .nav-links{
+      max-width: unset;
+      margin: unset;
+  }
 }
