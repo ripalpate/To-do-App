@@ -16,7 +16,7 @@ This project is an exploration of Firebase for To Do app. When the page is loade
 ![mainview](./screenshots/editTask.png)
 
 5. Completed Tasks
-![mainview](./screenshots/completed-task.png)
+![mainview](./screenshots/completedTasks.png)
 
 ### Technologies Used
 * Firebase

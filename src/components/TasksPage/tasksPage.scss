@@ -6,7 +6,7 @@
   font-family: $caveat-font;
   font-size: 1.75em !important;
   .delete-button {
-    margin-left: 50px;
+    margin-left: 10px;
   }
 }
 .header {
@@ -15,7 +15,56 @@
   padding-top:30px;
 }
 
+#completed-tasks {
+  border-radius: 0.25em;
+  display: inline-block;
+  margin-bottom: 50px;
+
+  .heading-completed {
+    font-family:$philosopher-font !important;
+    @include default-font (2em);
+    padding-top: 45px;
+  }
+  .completed-task-text {
+    font-family: $caveat-font;
+    font-size: 1.75em !important;
+    background-color: $backgroundColor;
+    padding:10px;
+  }
+  .comp-tasks {
+    text-align: left;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+  }
+  .delete-button-completed {
+    float: right;
+    margin: 10px;
+  }
+  .complete-time {
+    display: block;
+    font-size: .65em; 
+  }
+}
+
 .timeStamp {
   font-size: .65em !important;
+}
+
+#tasks .input-group-text {
+  display : block;
+  text-align: left;
+}
+
+#tasks .input-group-text * {
+  display: inline-block;
+}
+
+#tasks .input-group-text span {
+  padding-left: 20px;
+  display: block;
+}
+
+#tasks .input-group-text .delete-button, #tasks .input-group-text .edit-button {
+  float: right;
 }
 
