@@ -7,7 +7,7 @@ This project is an exploration of Firebase for To Do app. When the page is loade
 ![mainview](./screenshots/login.png)
 
 2. Tasks Page
-![mainview](./screenshots/tasks.png)
+![mainview](./screenshots/allTasks.png)
 
 3. Add Task Page
 ![mainview](./screenshots/addTask.png)
