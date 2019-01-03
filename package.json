@@ -8,7 +8,7 @@
     "lint": "eslint ./src --ext .js --fix",
     "dev": "NODE_ENV=development webpack-dev-server --content-base dist --hot",
     "start": "npm run lint && npm run dev",
-    "data": "json-server db/tasks.json --port 3004"
+    "deploy": "npm run build && firebase deploy"
   },
   "repository": {
     "type": "git",
