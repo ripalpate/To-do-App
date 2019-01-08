@@ -22,6 +22,8 @@ const navBarEvents = () => {
       $('#tasks-container').hide();
       $('#completed-tasks').hide();
       $('#show-task-input').hide();
+      $('#tasks-container').hide();
+      $('#show-task-input').hide();
     }
   });
 };
